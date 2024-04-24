@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ChatBot/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>SoundScape</title>
+</head>
+<body>
+    
+
+            <button id="init">START CHAT</button>
+
+    <div class="main-chatbot" id="test" style="position: absolute;bottom: 0;right: 0;display: none;">
+        <div class="child" id="chatbot">
+            <div class="header">
+                <div class="h-child">
+                    <img src="Chatbot/chatbot.png" alt="avatar" id="avatar">
+                    <div>
+                        <span class="name">Chatbot</span>
+                        <br>
+                        <span style="color:green">Online</span>
+                    </div>
+                </div>
+                <div>
+                    <button class="refBtn"><i class="fa fa-refresh" onclick="initChat()"></i></button>
+                </div>
+            </div>
+
+            <div id="chat-box">
+
+            </div>
+            <div class="footer">
+                <span>SOUNDSCAPE's BOT</span>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="menu">
+            
+            <div class="sidebar">
+                <h1 class="active home-page"><span></span><i class="bi bi-house"></i>&emsp;Home</h1>
+                <a href="playlist.html"><h1 class="active"><span></span><i class="bi bi-music-note-list"></i>&emsp;Playlist</h1></a>
+                <h1 class="active"><span></span><i class="bi bi-info-circle"></i>&emsp;About Us</h1>
+                <!-- <h1 class="active"><span></span><i class="bi bi-fire"></i>&emsp;Recommended</h1> -->
+            </div>
+        </div>
+        
+        
+        <div class="song">
+            <nav>
+                <h1>SOUNDSCAPE</h1>
+                <!-- <ul>
+                  
+                    <li><i class="bi bi-info-circle-fill"></i> SOUNDSCA <span></span></li>
+                </ul> -->
+                <div class="search">
+                    <input type="text" placeholder="Search Songs or artists...">
+                    <div class="search-results">
+                        <!-- <a href="" class="card">
+                            <img src="img/b6.jpg" alt="">
+                            <div class="search">
+                                Gerua
+                                <div class="subtitle">
+                                    Pritam, Arijit Singh, Antara Mitra
+                                </div>
+                            </div>
+                        </a> -->
+                        
+                    </div>
+                </div>
+                <div class="user">
+                    <i class="bi bi-person-circle"></i>
+                </div>
+            </nav>
+            
+            <div class="content">
+                <div class="rotd">
+                    <h2>Recommendations of the Day</h2>
+                    <div class="rbuttons">
+                        <i class="bi bi-arrow-left-short" id="rotd_left"></i>
+                        <i class="bi bi-arrow-right-short" id="rotd_right"></i>
+                    </div>
+                </div>
+                <div class="rpop">
+                    <li class="songItem">
+                        <div class="img_play">
+                            <img src="img/b10.jpg" alt="">
+                            <i class="bi bi-play-circle-fill" id="b10"></i>
+                        </div>
+                        <h4>What Jhumka?
+                            <div class="subtitle">Pritam, Arijit Singh, Jonita Gandhi, Ranveer Singh, Amitabh Bhattacharya</div>
+                        </h4>
+                    </li>
+                    <li class="songItem">
+                        <div class="img_play">
+                            <img src="img/b21.jpg" alt="">
+                            <i class="bi bi-play-circle-fill" id="b21"></i>
+                        </div>
+                        <h4>Chaleya
+                            <div class="subtitle"> Darshan Raval, DJ Chetas</div>
+                        </h4>
+                    </li>
+                    <li class="songItem">
+                        <div class="img_play">
+                            <img src="img/b6.jpg" alt="">
+                            <i class="bi bi-play-circle-fill" id="b6"></i>
+                        </div>
+                        <h4>Gerua
+                            <div class="subtitle">Pritam, Arijit Singh, Antara Mitra</div>
+                        </h4>
+                    </li>
+                    <li class="songItem">
+                        <div class="img_play">
+                            <img src="img/b18.jpg" alt="">
+                            <i class="bi bi-play-circle-fill" id="b18"></i>
+                        </div>
+                        <h4>Shaabaashiyaan
+                            <div class="subtitle">Abhijeet Srivastava, Anand Bhaskar, Shilpa Rao, Akshay, Vidya</div>
+                        </h4>
+                    </li>
+                    <li class="songItem">
+                        <div class="img_play">
+                            <img src="img/b17.jpg" alt="">
+                            <i class="bi bi-play-circle-fill" id="b17"></i>
+                        </div>
+                        <h4>Shayad - Love Aaj Kal
+                            <div class="subtitle">Arijit Singh, Pritam Chakraborty, Madhubanti Bagchi, Kartik, Sara</div>
+                        </h4>
+                    </li>
+                </div>
+                
+            </div>
+
+            <div class="content2">
+                <div class="psongs">
+                    <h2>Popular Songs</h2>
+                    <div class="rbuttons">
+                        <i class="bi bi-arrow-left-short" id="psongs_left"></i>
+                        <i class="bi bi-arrow-right-short" id="psongs_right"></i>
+                    </div>
+                </div>
+                <div class="popsongs">
+                    <li class="songItem">
+                        <div class="img_play">
+                            <img src="img/b15.jpg" alt="">
+                            <i class="bi bi-play-circle-fill" id="b15"></i>
+                        </div>
+                        <h4>Raataan Lambiyan
+                            <div class="subtitle">Asees Kaur, Jubin Nautiyal, and Tanishk Bagchi</div>
+                        </h4>
+                    </li>
+                    <li class="songItem">
+                        <div class="img_play">
+                            <img src="img/b1.jpg" alt="">
+                            <i class="bi bi-play-circle-fill" id="b1"></i>
+                        </div>
+                        <h4>Why This Kolaveri Di
+                            <div class="subtitle"> Anirudh Ravichander, Dhanush</div>
+                        </h4>
+                    </li>
+                    <li class="songItem">
+                        <div class="img_play">
+                            <img src="img/b2.jpg" alt="">
+                            <i class="bi bi-play-circle-fill" id="b2"></i>
+                        </div>
+                        <h4>DJ Wale Babu
+                            <div class="subtitle">Badshah, Aastha Gill, Nilesh P</div>
+                        </h4>
+                    </li>
+                    <li class="songItem">
+                        <div class="img_play">
+                            <img src="img/b3.jpg" alt="">
+                            <i class="bi bi-play-circle-fill" id="b3"></i>
+                        </div>
+                        <h4>Bulleya
+                            <div class="subtitle">Pritam Chakraborty</div>
+                        </h4>
+                    </li>
+                    <li class="songItem">
+                        <div class="img_play">
+                            <img src="img/b4.jpg" alt="">
+                            <i class="bi bi-play-circle-fill" id="b4"></i>
+                        </div>
+                        <h4>Channa Mereya
+                            <div class="subtitle">Arijit Singh</div>
+                        </h4>
+                    </li>
+                    <li class="songItem">
+                        <div class="img_play">
+                            <img src="img/b5.jpg" alt="">
+                            <i class="bi bi-play-circle-fill" id="b5"></i>
+                        </div>
+                        <h4>Chikni Chameli
+                            <div class="subtitle">Shreya Ghoshal</div>
+                        </h4>
+                    </li>
+                    <li class="songItem">
+                        <div class="img_play">
+                            <img src="img/b9.jpg" alt="">
+                            <i class="bi bi-play-circle-fill" id="b9"></i>
+                        </div>
+                        <h4>Hawayein
+                            <div class="subtitle">Arijit Singh</div>
+                        </h4>
+                    </li>
+                    <li class="songItem">
+                        <div class="img_play">
+                            <img src="img/b12.jpg" alt="">
+                            <i class="bi bi-play-circle-fill" id="b12"></i>
+                        </div>
+                        <h4>Kar Gayi Chull
+                            <div class="subtitle">Neha Kakkar, Badshah, Amaal Mallik, Sukriti Kakar, Fazilpuria</div>
+                        </h4>
+                    </li>
+                    
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="playbar">
+            <div class="wave" id="wave">
+                <div class="wave1"></div>
+                <div class="wave1"></div>
+                <div class="wave1"></div>
+            </div>
+            <img src="img/b1.jpg" alt="" id="poster_master_play">
+            <h5 id="title">
+                Why This Kolaveri Di
+                <div class="subtitle">Anirudh Ravichander, Dhanush
+                </div>
+            </h5>
+            <div class="icon">
+                <i class="bi shuffle bi-music-note-beamed">next</i>
+                <i class="bi bi-skip-start-circle"></i>
+                <i class="bi bi-play-fill" id="masterPlay"></i>
+                <i class="bi bi-skip-end-circle"></i>
+            </div>
+            <span id="currentStart">0:00</span>
+            <div class="bar">
+                <input type="range" id="seek" min="0" max="100">
+                <div class="bar2" id="bar2"></div>
+                <div class="dot"></div>
+            </div>
+            <span id="currentEnd">0:30</span>
+            <!-- <div class="vol">
+                <i class="bi bi-volume-down-fill" id="vol_icon"></i>
+                <input type="range" min="0" max="100" id="vol">
+                <div class="vol_bar"></div>
+                <div class="dot" id="vol_dot"></div>
+                <i class="bi bi-volume-up-fill"></i>
+            </div> -->
+            <div class="icon">
+                <a href="" download id="download_music"><i class="bi bi-download"></i></a>
+            </div>
+        </div>
+    </header>
+    
+    <script src="app.js"></script>
+</body>
+</html>
